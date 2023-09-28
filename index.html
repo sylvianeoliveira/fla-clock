@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fla's Clock</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/cwdc/mainPage/LCG.css" />
+        <style>
+            :root {
+                --cred: #c22a1e;
+                --cyellow: #dea02d;
+                --cwhite: #ffffff;
+                --cwhite1: #ffffff;
+                --cwhite2: #ffffff;
+            }
+            body {
+                margin: 20px;
+            }
+            #clock,
+            #handles {
+                border: 5px solid #8b2439;
+                padding: 10px;
+                margin: 0px;
+            }
+            #flu {
+                width: 512px;
+                font-family: cursive;
+                text-align: center;
+                font-size: 30px;
+            }
+            #container {
+                position: relative;
+                height: 352px;
+                margin: 0px;
+                margin-bottom: 30px;
+            }
+            canvas {
+                position: absolute;
+            }
+            #handles {
+                z-index: 2;
+            }
+            #clock {
+                background: url("./flag.jpg");
+                background-size: 512px 512px;
+                background-size: cover;
+                z-index: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p id="flu">
+            <a href="https://www.flamengo.com.br/"
+                >Clube de Regatas do Flamengo</a
+            >
+            <sub style="font-size: small">
+                <a href="/cg/downloads/PDFs/04_LCG_Window-Viewport.pdf">[1]</a>
+                <a href="/python/laboratorios2.html#8c">[2]</a>
+                <a
+                    href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+                    >[3]</a
+                >
+            </sub>
+        </p>
+
+        <div id="container">
+            <canvas id="clock" width="503" height="352">
+                Please upgrade your browser.
+            </canvas>
+            <canvas id="handles" width="503" height="352">
+                Please upgrade your browser.
+            </canvas>
+        </div>
+
+        <br />
+        <p>
+            <audio title="Marcha do Flamengo" controls loop>
+                <source src="hino-flamengo-fc.mp3" type="audio/mpeg" />
+                Please upgrade your browser!
+            </audio>
+
+            <small>
+                Marcha do Flamengo por
+                <a
+                    href="https://ge.globo.com/futebol/times/flamengo/noticia/2023/06/21/voce-sabia-que-o-flamengo-tem-dois-hinos-conheca-a-historia.ghtml"
+                >
+                    Lamartine Babo (1950).
+                </a>
+            </small>
+        </p>
+        <p>
+            <iframe
+                title="Final da Libertadores 2019"
+                width="320"
+                height="240"
+                src="https://www.youtube.com/embed/YQ1ihQNjpik?si=beE0ESPpZlynLdpK"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            >
+            </iframe>
+            <br />
+            <small id="Dezembro de 81">
+                Canto das torcidas:
+                <a href="https://www.youtube.com/watch?v=A8IgwDSE19A">
+                    Dezembro de 81
+                </a>
+            </small>
+            <br />
+            <small id="Flamengo eh selecao">
+                Canto das torcidas:
+                <a href="https://www.youtube.com/watch?v=aiSOzVbFp_s">
+                    VOCÊ PENSA QUE O FLAMENGO É TIME?
+                </a>
+            </small>
+            <br />
+            <small id="time de tradicao">
+                Canto das torcidas:
+                <a href="https://www.youtube.com/watch?v=A5Lv_Lo4jlI">
+                    Tu és time de tradição!
+                </a>
+            </small>
+        </p>
+
+        <script src="suncalc.js"></script>
+        <script src="clock.js"></script>
+        <script src="date.js"></script>
+
+        <script>
+            document.querySelector("#Rivelino").innerHTML += `(${elapsedYears(
+                "1975-06-10"
+            )} years ago)`;
+            document.querySelector("#Renato").innerHTML += `(${elapsedYears(
+                "1995-06-25"
+            )} years ago)`;
+            document.querySelector("#Cano").innerHTML += `(${elapsedYears(
+                "2023-02-12"
+            )} years ago)`;
+        </script>
+    </body>
+</html>
